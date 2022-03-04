@@ -1,0 +1,99 @@
+<h1 style="margin-top: 10px;">Comités</h1>
+
+<div class="container" style="text-align: justify; margin-top: 10px;">
+    <div class="row">
+        <div class="rector-text">
+            <h3>Comité de Calidad</h3>
+            <b>{{comision_calidad.subtitle}}</b>
+            <p>{{comision_calidad.body}}</p>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let c of comision_calidad.integrantes;">
+                    <div class="comision">
+                        <img *ngIf="c.foto" [src]="c.foto">
+                        <div>
+                            <h5>{{c.nombre}}</h5>
+                            <p style="text-align: left;">{{c.cargo}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="text-align: justify; margin-top: 60px;">
+    <div class="row">
+        <div class="rector-text">
+            <h3>Comité Técnico</h3>
+            <b>{{comision_tecnico.subtitle}}</b>
+            <p>{{comision_tecnico.body}}</p>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let c of comision_tecnico.integrantes;">
+                    <div class="comision">
+                        <img *ngIf="c.foto" [src]="c.foto">
+                        <div>
+                            <h5>{{c.nombre}}</h5>
+                            <p style="text-align: left;">{{c.cargo}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h1 style="margin-bottom: 10px;">Comisiones por Área</h1>
+
+<div class="container">
+    <nav-menu [items]="sections" [mainMenu]="false" [sectionLabel]="'selectedComision'" (OnSelectSection)="selectSection($event)"></nav-menu>
+</div>
+  
+  
+
+<div class="container" style="text-align: justify; margin-top: 50px;" *ngIf="selectedSection">
+    <div class="row">
+      <div class="rector-text">
+        <h3>Comisión de {{selectedSection.nombre}}</h3>
+        <b>{{comision_subtitle}}</b>
+        <p>{{comision_body}}</p>    
+        <hr>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let c of selectedSection.comision;">
+                <div class="comision">
+                    <img *ngIf="c.foto" [src]="c.foto">
+                    <div>
+                        <h5>{{c.nombre}}</h5>
+                        <p style="text-align: left;">{{c.cargo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container" style="text-align: justify; margin-top: 50px;" *ngIf="selectedSection && selectedSection.subcomision">
+    <div class="row">
+      <div class="rector-text">
+        <h3>{{selectedSection.nombre_subcomision}}</h3>
+        
+        <b>{{subcomision_subtitle}}</b>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let c of selectedSection.subcomision;">
+                <div class="comision">
+                    <img *ngIf="c.foto" [src]="c.foto">
+                    <div>
+                        <h5>{{c.nombre}}</h5>
+                        <p style="text-align: left;">{{c.cargo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<h1 style="text-align: center;">Preguntas Frecuentes</h1>
+
+<div class="container">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default" *ngFor="let p of preguntas;">
+        <div class="panel-heading" role="tab" [id]="p.id">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="collapse0" (click)="collapsePregunta(p)" >
+                    <div class="toggle-link">
+                      <i-feather name="chevron-down" class="icon header"  *ngIf="p.collapsed"></i-feather>
+                      <i-feather name="chevron-up" class="icon header" *ngIf="!p.collapsed"></i-feather>
+                    </div>
+                    {{p.enunciado}}
+                </a>
+            </h4>
+        </div>
+        <div id="collapse0" class="panel-collapse" [ngClass]="{'collapse': p.collapsed}" role="tabpanel" aria-labelledby="heading0">
+            <div class="panel-body">
+                <p>{{p.respuesta}}</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

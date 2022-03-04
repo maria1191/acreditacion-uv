@@ -1,0 +1,40 @@
+<div class="timeline-container">
+  <h1 class="project-name">Agenda de Trabajo</h1>
+  <br><br>
+
+  <div id="timeline">
+    <div class="timeline-item" *ngFor="let m of meses; let i = index;">
+      <div class="timeline-icon">
+        <i-feather name="calendar" class="icon alerta"></i-feather>
+      </div>
+      <div class="timeline-content" [ngClass]="{'right': i%2 == 1}">
+        <h4>{{m.nombre}}</h4>
+        <ul>
+          <li *ngFor="let a of m.actividades;">{{a}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--div id=timeline>
+	<h1>Agenda de Trabajo</h1>
+	<p class="leader">All cards must be the same height and width for space calculations on large screens.</p>
+	<div class="demo-card-wrapper">
+      <div class="demo-card demo-card--step{{i+1}}"  *ngFor="let m of meses; let i = index;">
+        <div class="head">
+          <div class="number-box">
+            <span>{{i+1}}</span>
+          </div>
+          <h2><span class="small">Subtitle</span> {{m.nombre}}</h2>
+        </div>
+        <div class="body">
+          <ul>
+            <li *ngFor="let a of m.actividades;">{{a}}</li>
+          </ul>
+        </div>
+      </div>
+ 	</div>
+</div-->
+

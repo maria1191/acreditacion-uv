@@ -1,0 +1,125 @@
+<div class="page-title">
+  <a class="icon-link" target="_blank" href="http://instagram.com/uvalpochile">
+    <i-feather name="instagram" class="icon header"></i-feather>
+  </a>
+  <a class="icon-link" target="_blank" href="http://twitter.com/uvalpochile">
+    <i-feather name="youtube" class="icon header"></i-feather>
+  </a>
+  <a class="icon-link" target="_blank" href="https://www.facebook.com/uvalpo">
+    <i-feather name="facebook" class="icon header"></i-feather>
+  </a>
+</div>
+
+<div class="nav-header">
+  <nav-menu [items]="sections" [hidden]="displayModal" [mainMenu]="true" [sectionLabel]="'selectedSection'"
+    (OnSelectSection)="selectSection($event)" [selectedSection]="selectedSection"></nav-menu>
+</div>
+
+
+<inicio *ngIf="!showBoletines && !selectedNoticia && selectedIndex == 0"></inicio>
+
+<noticias *ngIf="!showBoletines && !selectedNoticia && selectedIndex == 0" [banner]="true"
+  (onSelectNoticia)="verNoticia($event)"></noticias>
+<div class="bg-gray" *ngIf="!showBoletines && !selectedNoticia && selectedIndex == 0" style="text-align: center;">
+  <a (click)="selectSection({item: sections[8], index: 8})" class="search-home-button"> Más Noticias</a>
+</div>
+
+<div class="body bg-white" *ngIf="!showBoletines && !selectedNoticia && selectedIndex > 0">
+  <areas *ngIf="selectedIndex == 1"></areas>
+  <comites *ngIf="selectedIndex == 2"></comites>
+  <etapas *ngIf="selectedIndex == 3"></etapas>
+  <agenda *ngIf="selectedIndex == 4"></agenda>
+  <infografias *ngIf="selectedIndex == 5"></infografias>
+  <ficha-datos *ngIf="selectedIndex == 6"></ficha-datos>
+  <faq *ngIf="selectedIndex == 7"></faq>
+  <noticias *ngIf="selectedIndex == 8" (onSelectNoticia)="verNoticia($event)"></noticias>
+</div>
+
+
+<div class="container" style="text-align: center; margin-top: 100px; margin-bottom: 100px;"
+  *ngIf="!showBoletines && selectedNoticia">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>{{selectedNoticia.titulo}}</h2>
+      <small>Publicado el {{selectedNoticia.published}}</small>
+      <div style="margin: 60px 0px;">
+        <img *ngIf="!selectedNoticia.video" [src]="selectedNoticia.image" class="img-responsive"
+          style="border-radius: 20px;box-shadow: black 0px 0px 20px -10px;">
+        <iframe *ngIf="selectedNoticia.video" [src]="selectedNoticia.video | safe"
+          style="width: 75vw;max-width: 950px;height: 42.5vw;max-height: 475px;border-radius: 20px;box-shadow: black 0px 0px 20px -10px;"
+          autoplay allowfullscreen></iframe>
+
+      </div>
+      <p style="text-align: justify;" *ngFor="let p of selectedNoticia.cuerpo;">{{p}}</p>
+    </div>
+  </div>
+  <div style="text-align: center;margin-top: 80px;">
+    <a (click)="selectSection({item: sections[8], index: 8})" class="search-home-button"
+      style="padding: 15px calc(50% - 150px);">Ver Más Noticias</a>
+  </div>
+</div>
+
+
+
+<div class="toast-boletin slide-in-lef" [ngClass]="{'active': showBoletines}"
+  [@openClose]="showBoletines? 'open':'closed'" [@slideInLeft]="hideBoletinToast? 'hidden':'showing'"
+  (click)="toggleBoletines()">
+  <img src="./assets/documents.png" class="image" *ngIf="!showBoletines">
+  <i-feather class="icon header" name="x" *ngIf="showBoletines"></i-feather>
+  <span *ngIf="!showBoletines">Boletín Mensual</span>
+  <span *ngIf="showBoletines">Cerrar Boletín</span>
+</div>
+
+<div *ngIf="showBoletines">
+  <h3 style="text-align: center;margin: 10px 0px 0px 0px;">Boletines</h3>
+  <div class="boletin-footer">
+    <div class="thumb" *ngFor="let b of boletines;let i = index;" [ngClass]="{'active': b == selectedBoletin}"
+      (click)="selectBoletin(b)">
+      {{b.edicion}}º Edición<br>
+      {{b.nombre}}
+    </div>
+  </div>
+  <iframe [src]="selectedBoletin.documento | safe"
+    style="width: 100%; height: calc(100vh - 250px); border: none; background: #ffffff;" allow="autoplay"
+    allowfullscreen>
+    <p><a target="_blank" [href]="selectedBoletin.documento | safe">Ver el boletín en otra pestaña</a></p>
+  </iframe>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="background-color: #6E2B13; color: #ffffff; padding: 50px 0px;">
+  <div class="col-sm-12">
+    <div class="container" style="text-align: justify;">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>Sitios de Interés</h4>
+          <p class="icon-link"><a target="_blank" href="https://www.uv.cl/">Universidad de Valparaíso</a></p>
+          <p class="icon-link"><a target="_blank" href="https://www.cnachile.cl/Paginas/Inicio.aspx">CNA</a></p>
+          <p class="icon-link"><a target="_blank" href="https://www.cned.cl/">Cned</a></p>
+          <p class="icon-link"><a target="_blank" href="https://www.consejoderectores.cl/">CRUCH</a></p>
+          <p class="icon-link"><a target="_blank" href="https://www.uestatales.cl/cue/">CUECH</a></p>
+        </div>
+        <div class="col-sm-6">
+          <h4><br></h4>
+          <p class="icon-link">Blanco 951, Valparaíso</p>
+          <p class="icon-link">
+            32 250 0000
+          </p>
+          <p class="icon-link">
+            dgdiac@uv.cl
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

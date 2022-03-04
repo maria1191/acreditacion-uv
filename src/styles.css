@@ -1,0 +1,243 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {font-family: "titulos"; src: url('/assets/fonts/titulos.woff2')  format("woff");}
+@font-face {font-family: "parrafo"; src: url('/assets/fonts/parrafo.woff2')  format("woff");}
+@font-face {font-family: "manuscrita"; src: url('/assets/fonts/manuscrita.woff2')  format("woff");}
+
+body {
+    font-family: "parrafo";
+    font-size: 16px;
+    line-height: 1.42857143;
+    background-color: #f4f4f4;
+    color: #6e2b13/**/;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4 {
+    color: #6e2b13;
+}
+h1, h2 {
+    font-family: "titulos";
+    /*text-transform: uppercase;*/
+}
+.manuscrita {
+    font-family: "manuscrita";
+}
+.startup-title {
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 36px;
+}
+
+.col-xs-6 {
+    width: 50%;
+}
+
+.bg-white {
+    background-color: #ffffff;
+    padding: 40px 0px;
+    margin-top: -1px;
+}
+.bg-gray {
+    background: #f0f3f7;
+    padding: 40px 0px;
+    margin-top: -1px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    /*color: #6E2B13;*/
+}
+.h2,
+h3 {
+    font-weight: 300;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+svg {
+    stroke-width: 1px;
+}
+.icon {
+    height: 12px !important;
+    width: 12px !important;
+}
+.icon.big {
+    height: 50px !important;
+    width: 50px !important;
+}
+.icon.header {
+    height: 24px !important;
+    width: 24px !important;
+    margin: 0px 10px 6px 10px;
+}
+.icon.alerta {
+    height: 20px !important;
+    width: 20px !important;
+}
+.icon.alerta > i > svg {
+    stroke-width: 1px;
+}
+.carousel-indicators li {
+    background-color: #191944 !important;
+}
+.carousel-control-next,
+.carousel-control-prev {
+    top: auto;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    opacity: 0.75;
+}
+.carousel-control-prev-icon {
+    background-image: url("/assets/chevron-left.svg");
+}
+.carousel-control-next-icon {
+    background-image: url("/assets/chevron-right.svg");
+}
+.carousel-inner {
+    overflow: hidden;
+}
+.table {
+    font-size: 14px;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+.page-title {
+    color: #ffffff;
+    font-weight: 300;
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.25) 50%,
+        rgba(0, 0, 0, 0) 90%
+    );
+}
+.icon-link,
+.icon-link:focus,
+.icon-link:hover,
+.icon-link a,
+.icon-link:focus a,
+.icon-link:hover a {
+    color: #ffffff;
+    opacity: 1;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icon-link {
+    opacity: 0.5;
+}
+
+.noticia {
+    margin-top: 30px;
+    cursor: pointer;
+}
+.noticia-img {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+.noticia-text {
+    border: 1px solid #f1f1f1;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: #969696 0px 0px 20px -10px;
+    background-color: #ffffff;
+    min-height: 154px;
+    padding: 0px 6px;
+}
+
+.search-home-button {
+    padding: 15px 60px;
+    text-align: center;
+    border-radius: 50px;
+    background: #8b94a0;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 2;
+}
+.search-home-button,
+.search-home-button:hover,
+.search-home-button:focus {
+    background: #7a889a;
+    color: #ffffff;
+    text-decoration: none;
+}
+.rector-text {
+    width: 100%;
+    margin: 0px;
+    padding: 10px 15px;
+    border: 1px solid #f1f1f1;
+    border-radius: 20px;
+    box-shadow: #969696 0px 0px 20px -10px;
+}
+
+.p-sidebar-full {
+    background: rgb(0, 0, 0, 0.15);
+    backdrop-filter: blur(7px);
+}
+
+.p-sidebar-header,
+.p-sidebar-content {
+    text-align: center;
+    overflow: visible;
+}
+.p-sidebar .p-sidebar-header .p-sidebar-close,
+.p-sidebar .p-sidebar-header .p-sidebar-icon {
+    width: 3rem;
+    height: 3rem;
+    top: 10px;
+    right: 50px;
+    background-color: #ffffff;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+    background: #ffffff;
+}
+
+.banner-img {
+    max-width: 100%;
+    max-height: calc(100vh - 120px);
+    border-radius: 20px;
+    box-shadow: #000000 0px 0px 60px 17px;
+    border: 1px solid #000000;
+}
+
+.btn-encuesta  {
+    position: fixed;
+    bottom: 90px;
+    margin-left: -100px;
+    box-shadow: #000000 0px 0px 20px 3px;
+    font-size: 24px;
+    padding: 10px 40px;
+}
+@media (min-height: 600px) {
+    .btn-encuesta  {
+        bottom: 18vh;
+        top: auto;
+    }
+}

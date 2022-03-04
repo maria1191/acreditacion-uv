@@ -1,0 +1,95 @@
+h1 {
+    text-align: center;
+    margin: 100px 0px 50px 0px;
+}
+
+.home.header {
+    background-color: #ffffff;
+}
+
+.home-slider {
+    width: calc(100% - 100px);
+    background: rgba(0, 0, 0, 0.18);
+    margin: 50px 50px;
+    border-radius: 20px;
+    font-size: 15px;
+    overflow: hidden;
+    color: #000000;
+}
+.home-slider .home-slide-item {
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+    opacity: 0.7;
+    width: calc(100% / 5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-slider .home-slide-item:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.07);
+}
+.home-slider .home-slide-item.active {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.12);
+}
+.home-slider .home-slide-item .home-slide-content {
+    /*border-top: 3px solid #bbbbbb;*/
+    border-top: none;
+    text-align: center;
+    font-weight: 200;
+    text-transform: uppercase;
+    padding: 5px 0px;
+}
+
+.home-slider .home-slide-item .home-slide-content.section0 {
+    border-color: #3277dc;
+}
+.home-slider .home-slide-item .home-slide-content.section1 {
+    border-color: #1ecbd8;
+}
+.home-slider .home-slide-item .home-slide-content.section2 {
+    border-color: #ff7474;
+}
+.home-slider .home-slide-item .home-slide-content.section3 {
+    border-color: #2a8090;
+}
+.home-slider .home-slide-item .home-slide-content.section4 {
+    border-color: slateblue;
+}
+
+.home-slide-btn {
+    color: #000000;
+}
+.home-slide-btn:hover,
+.home-slide-btn:focus {
+    text-decoration: none !important;
+}
+
+.comision {
+    border-radius: 20px;
+    border: 1px solid #e2e2e2;
+    background-color: #f9f9f9;
+    padding: 10px 10px 10px 10px;
+    margin: 7px 0px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+.comision img {
+    border-radius: 50%;
+    min-width: 70px;
+    max-width: 70px;
+    min-height: 70px;
+    max-height: 70px;
+    margin-right: 10px;
+    filter: grayscale(100%);
+}
+.comision h5,
+.comision p {
+    line-height: 1;
+}
+.comision h5 {
+    margin-top: 10px;
+}

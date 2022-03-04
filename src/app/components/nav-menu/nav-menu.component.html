@@ -1,0 +1,37 @@
+<div class="container" [ngStyle]="{'margin-bottom': mainMenu? '20px' : '100px'}">
+  <div class="d-none d-lg-block d-xl-block home header" [ngClass]="{'main-menu': mainMenu}">
+    <div class="row home-slider" [ngClass]="{'main-menu': mainMenu}">
+      <div class="home-slide-item mx-auto" [ngClass]="{active: selectedSection == section}" *ngFor="let section of sections; let i = index;" (click)="selectSection(section, i)" 
+      [ngStyle]="{'width': (100/sections.length)+'%'}">
+        <!--i-feather [name]="section.icon" class="icon big" style="margin-bottom: 10px;"></i-feather-->
+        <div class="home-slide-content" [ngClass]="'section'+i">
+          <a class="home-slide-btn" [ngClass]="{'main-menu': mainMenu}">
+            <span class="home-slide-label subhead"> {{section.nombre}}</span>
+          </a>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none d-xl-none">
+  <button class="navbar-toggler" [ngClass]="{'main-menu': mainMenu}" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="selectedSectionMenu" *ngIf="!mainMenu">
+    <h5>{{selectedSection.nombre}}</h5>
+  </div>
+
+      <!--i-feather name="chevron-down" class="icon header"  *ngIf="collapsedMenu"></i-feather>
+      <i-feather name="chevron-up" class="icon header" *ngIf="!collapsedMenu"></i-feather-->
+
+  <div class="navbar-collapse" id="navbarSupportedContent" [ngClass]="{'main-menu': mainMenu, 'collapse': collapsedMenu}">
+    <ul class="navbar-nav mr-auto" [ngClass]="{'main-menu': mainMenu}">
+      <li id="collapse0" class="nav-item" role="tabpanel" [ngClass]="{'active': selectedSection == section, 'main-menu': mainMenu}" *ngFor="let section of sections; let i = index;" (click)="selectSection(section, i)">
+        <a class="nav-link" [ngClass]="{'main-menu': mainMenu, 'collapse': collapsedMenu}">{{section.nombre}} </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+

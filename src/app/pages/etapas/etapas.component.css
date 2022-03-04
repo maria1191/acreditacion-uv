@@ -1,0 +1,105 @@
+.etapa {
+    border: 1px solid #cccccc;
+    border-top: none;
+    border-bottom: none;
+}
+.etapa h2 {
+    margin-left: 30px;
+}
+.etapa.first {
+    border-top: 1px solid #cccccc;
+    border-radius: 20px 20px 0px 0px;
+}
+.etapa.last {
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0px 0px 20px 20px;
+}
+.etapa .diagrama {
+    text-align: center;
+    height: 1200px;
+    width: 100%;
+    margin: -380px 0px;
+}
+/*
+#InfographicContainer {
+    position: relative;
+}
+#InfographicContainer svg {
+    max-width: 100%;
+}
+#HowWeWorkInfographic g:focus .BGCircle,
+#HowWeWorkInfographic g:hover .BGCircle,
+#HowWeWorkInfographic g.Active .BGCircle {
+    fill: green;
+}
+#HowWeWorkInfographic g:focus .BGCircleInner,
+#HowWeWorkInfographic g:hover .BGCircleInner,
+#HowWeWorkInfographic g.Active .BGCircleInner {
+    stroke: green;
+}
+#HowWeWorkInfographic g:hover {
+    cursor: pointer;
+}
+#HowWeWorkInfographic g.Active .SecondaryGreenFill {
+    fill: green;
+}
+#HowWeWorkInfographic g.Active .SecondaryGreenStroke {
+    stroke: green;
+}
+#HowWeWorkInfoGraphicText {
+    position: relative;
+}
+#HowWeWorkInfoGraphicText > div {
+    padding: 40px;
+    color: white;
+    position: absolute;
+}
+#HowWeWorkInfoGraphicText > div:not(.IntroText) {
+    display: none;
+}
+#HowWeWorkInfoGraphicText > div a {
+    height: auto;
+    line-height: 1.75;
+    border-bottom: none !important;
+    text-decoration: underline;
+}
+#HowWeWorkInfoGraphicText > div h4 {
+    color: white;
+}
+@media only screen and (max-width: 1023px) {
+    #HowWeWorkInfoGraphicText {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: none;
+        background: rgba(0, 177, 121, 0.95);
+    }
+    #HowWeWorkInfoGraphicText.Active {
+        display: block;
+    }
+    #InfographicContainer svg {
+        height: auto;
+    }
+}
+
+@media (max-width: 475px) {
+    svg {
+        min-height: 850px;
+        margin-bottom: -200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .etapa {
+        padding-top: 300px;
+    }
+    .etapa h2 {
+        margin-top: -280px;
+    }
+    .etapa .diagrama {
+        text-align: center;
+        margin-top: -460px;
+    }
+}
+*/

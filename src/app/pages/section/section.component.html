@@ -1,0 +1,122 @@
+<div class="row">
+  <div class="col-sm-3 sidebar-menu">
+    <div class="nav">
+      <div class="logo d-flex align-items-center justify-content-start">
+        <img src="assets/uv_logo.png" alt="">
+      </div>
+
+      <li [ngClass]="{'active': selectedSection == section}" *ngFor="let section of sections">
+        <a class="nav-link" (click)="selectSection(section)">
+          <i-feather [name]="section.icon" class="icon"></i-feather> 
+           {{section.nombre}}
+        </a>
+        <div class="subsection" *ngIf="selectedSection == section">
+          <li [ngClass]="{'active': selectedSubSection == subsection}" *ngFor="let subsection of selectedSection.subsections; let i = index;">
+            <a class="nav-link-subsection" (click)="selectSubSection(subsection)">
+              {{i+1}}. {{subsection.nombre}}
+            </a>
+          </li>  
+        </div>  
+      </li>
+
+      <a class="badge badge-pill download-badge" href="https://diagnosticos.uv.cl/autoevaluacion/assets/ficha.xlsx" download="VF_ Ficha Institucional de Datos - Universidad de Valparaíso Diciembre 2020.xlsx">
+        <i-feather name="download" class="icon header"></i-feather> <small> Descargar Ficha</small>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="col-sm-9 main-panel">
+
+      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">    
+
+      <a class="navbar-brand" (click)="selectSection(null)">
+        <i-feather name="x" class="icon header"></i-feather>
+      </a>
+  
+      <div class="container-fluid hide-in d-none d-sm-block d-md-none">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item" *ngFor="let section of sections">
+              <a class="nav-link" [ngClass]="{'active': selectedSection == section}" (click)="selectSection(section)">{{section?.nombre}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+
+
+      <div class="container-fluid" *ngIf="selectedSubSection">
+
+        <ngb-carousel *ngIf="selectedSubSection.tablas" animation="true" interval="0">
+          <ng-template ngbSlide *ngFor="let tabla of selectedSubSection.tablas">
+            <div class="card">
+              <div class="card-header">
+                <a class="alertas badge badge-pill badge-danger" *ngIf="tabla.incompleta">
+                  <i-feather name="alert-circle" class="icon alerta"></i-feather> <small> Tabla no actualizada</small>
+                </a>
+                <a class="alertas badge badge-pill badge-warning" *ngIf="tabla.parcial">
+                  <i-feather name="alert-circle" class="icon alerta"></i-feather> <small> Tabla parcialmente actualizada</small>
+                </a>
+    
+                <h4 class="card-title">{{tabla.nombre}}</h4>
+                <p class="card-category">{{tabla.bajada}}</p>
+              </div>
+
+              <div class="card-body">
+                <div class="col-sm-12 table shadow">
+
+                  <table class="table table-sm table-hover" *ngIf="tabla.header || tabla.body">
+                    <thead>
+                      <tr *ngFor="let header of tabla.header">
+                        <th *ngFor="let h of header" [attr.colspan]="getColspan(h)" [ngClass]="{'text-center': getColspan(h) > 1}"> {{getHeader(h)}}</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let row of tabla.body">
+                        <td *ngFor="let r of row" [attr.colspan]="getColspan(r)" [ngClass]="{'subheader text-center': getColspan(r) > 1}" >{{getHeader(r)}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-sm-12 table" *ngIf="tabla.fuente && tabla.fuente.length">
+                  <h4>
+                    <i-feather name="database" class="icon"></i-feather>
+                    Fuentes:
+                  </h4>
+                  <ul class="list-padiing">
+                    <li *ngFor="let f of tabla.fuente">{{ f }}</li>
+                  </ul>
+                </div>                
+                <div class="col-sm-12 table" *ngIf="tabla.nota && tabla.nota.length">
+                  <h4>
+                    <i-feather name="list" class="icon"></i-feather>
+                    Notas:
+                  </h4>
+                  <ul class="list-padiing">
+                    <li *ngFor="let n of tabla.nota">{{ n }}</li>
+                  </ul>
+                </div>
+                <div class="col-sm-12 table" *ngIf="tabla.enlace && tabla.enlace.length">
+                  <h4>
+                    <i-feather name="link-2" class="icon"></i-feather>
+                    Enlaces:
+                  </h4>
+                  <ul class="list-padiing">
+                    <li *ngFor="let e of tabla.enlace"><a [href]="e" target="_blank">{{ e }}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+</div>  

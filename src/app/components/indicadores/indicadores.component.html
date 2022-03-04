@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center" [ngClass]="{'home-panel': _indicadores.length >= 5}">
+    <div style="margin-bottom: 20px;" class="col-sm-6 col-md-4 col-lg-2" [ngClass]="{'col-lg-3': _indicadores.length < 5}" *ngFor="let i of _indicadores;">
+      <div class="indicador" [ngClass]="{'home-panel': _indicadores.length >= 5}">
+
+        <div class="head" [ngStyle]="{'background-color': i.background}">
+          <div class="area" *ngIf="i.area">{{i.area}}<br></div>
+          <span *ngIf="i.icon">
+            <i-feather [name]="i.icon" class="icon big"></i-feather><br>  
+          </span>
+          <h1 *ngIf="i.valor <  10000">
+            {{i.display | number: '1.0-0': 'es'}}{{i.simbolo}}
+          </h1>
+          <h2 *ngIf="i.valor >= 10000">
+            {{i.display | number: '1.0-0': 'es'}}{{i.simbolo}}
+          </h2>
+        </div>
+
+        <small>{{i.nombre}}</small>
+
+      </div>
+    </div>
+  </div>
+</div>

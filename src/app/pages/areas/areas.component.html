@@ -1,0 +1,18 @@
+<h1 style="text-align: center;">Áreas de Acreditación</h1>
+<div class="container" style="margin-bottom: 100px;">
+  <nav-menu [items]="sections" [mainMenu]="false" [sectionLabel]="'selectedArea'" (OnSelectSection)="selectSection($event)"></nav-menu>
+</div>
+
+<indicadores [indicadores]="selectedSection.indicadores"></indicadores>
+
+<div class="container" style="text-align: justify; margin-top: 50px;">
+  <div class="row">
+    <div class="rector-text">
+      <h2>Área de {{selectedSection.nombre}}:</h2>
+      <p *ngFor="let d of selectedSection.descripcion">
+        {{d}}
+      </p>
+    </div>
+  </div>
+</div>
+

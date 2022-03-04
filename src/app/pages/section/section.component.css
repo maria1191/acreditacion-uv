@@ -1,0 +1,256 @@
+.sidebar-menu {
+    position: relative;
+    top: 0;
+    left: 0px;
+    width: 300px;
+    background-image: url("/assets/sidebar-background.jpg");
+    background-size: cover;
+    background-size: contain;
+    background-position: 50%;
+}
+.sidebar-menu .logo {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+}
+.sidebar-menu .logo img {
+    max-width: 86px;
+    max-height: 40px;
+    margin: auto;
+}
+.sidebar-menu .nav {
+    overflow: auto;
+    color: #fff;
+    font-weight: 200;
+    height: calc(100vh - 100px);
+    background: rgb(88, 87, 87);
+    background: linear-gradient(
+        180deg,
+        rgb(23 21 21 / 80%) 20%,
+        rgba(17, 17, 17, 0.6) 67%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    background-size: 150% 150%;
+    margin-right: -15px;
+}
+.sidebar-menu .nav:before {
+    opacity: 0.33;
+    background: #000;
+}
+
+.sidebar-menu .nav li .nav-link {
+    color: #fff;
+    margin: 5px 15px;
+    opacity: 0.86;
+    border-radius: 4px;
+    display: block;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.sidebar-menu .nav a {
+    transition: all 0.15s ease-in;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    float: none;
+    display: block;
+}
+.sidebar-menu .nav li .nav-link {
+    color: #fff;
+    margin: 5px 15px;
+    opacity: 0.86;
+    border-radius: 4px;
+    display: block;
+    padding: 15px 15px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.sidebar-menu .nav li:hover .nav-link {
+    background: hsla(0, 0%, 100%, 0.13);
+    opacity: 1;
+}
+.sidebar-menu .nav li.active .nav-link {
+    color: #fff;
+    opacity: 1;
+    background: hsla(0, 0%, 100%, 0.23);
+}
+.card {
+    height: calc(100vh - 260px);
+}
+.card-body {
+    overflow: auto;
+}
+.subsection {
+    background: hsl(0deg 0% 50% / 23%);
+    margin: -4px 15px 0px 20px;
+}
+
+.subsection li.active {
+    border-radius: 4px;
+    display: block;
+    cursor: none;
+    background: hsla(0, 0%, 100%, 0.23);
+}
+.nav-link-subsection {
+    margin: 0px;
+    padding: 0px 15px;
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.6;
+    text-decoration: none !important;
+    font-weight: 300;
+}
+.nav-link-subsection:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.nav-link-subsection.active {
+    opacity: 1;
+}
+
+.main-panel {
+    position: relative;
+    width: calc(100% - 300px);
+    height: calc(100% - 50px);
+    background-color: #f7f7f8;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.navbar-expand-lg {
+    padding: 10px 30px;
+}
+.main-panel {
+    padding: 0px;
+}
+.main-panel .content {
+    width: calc(100% - 15px);
+    height: calc(100vw - 479px);
+    padding: 30px 15px 0px 15px;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: #fff;
+}
+.card .card-title {
+    margin: 0;
+    color: #333;
+    font-weight: 300;
+    padding-right: 140px;
+}
+.card-title {
+    margin-bottom: 0.75rem;
+}
+.h4,
+h4 {
+    font-size: 22px;
+    line-height: 30px;
+}
+.card .card-category {
+    font-size: 14px;
+    font-weight: 400;
+    color: #9a9a9a;
+    margin-bottom: 0;
+}
+table {
+    margin: 0px -15px;
+    width: calc(100% + 30px);
+}
+.table {
+    font-size: 12px;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #c6c7ea;
+    background-color: #e8e9fd;
+}
+div.table {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #c6c7ea;
+}
+.subheader {
+    background-color: #f9faff;
+    border-bottom: 2px solid #c6c7ea;
+    /* text-transform: uppercase;*/
+}
+div.table.shadow {
+    box-shadow: #212629 0px 9px 12px -10px;
+    margin-bottom: 40px;
+    overflow: auto;
+}
+div.table h4 {
+    font-size: 13px;
+    margin: 0px;
+    background: #f6f7ff;
+    margin: 0px -15px;
+    padding: 0px 5px;
+}
+.list-padiing {
+    padding: 3px 0px 0px 8px;
+    margin-bottom: 5px;
+}
+.navbar-brand {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 3px 10px 7px 10px;
+    border-radius: 35px;
+    margin: 0px 0px 0px calc(100% - 36px);
+    cursor: pointer;
+}
+.navbar-brand:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.transparent-background {
+    background: transparent !important;
+}
+
+.carousel.slide {
+    height: calc(100vh - 200px) !important;
+    outline: none !important;
+}
+.subsection li.active a {
+    opacity: 1;
+}
+.alertas {
+    position: absolute;
+    z-index: 6;
+    top: 12px;
+    right: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+}
+.badge-danger {
+    color: #fff !important;
+}
+.download-badge {
+    margin: 20px 5%;
+    width: 90%;
+    font-size: 17px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 10px 0px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.download-badge:hover {
+    background: rgba(120, 120, 120, 0.2);
+}
+.download-badge:active {
+    background: rgba(0, 0, 0, 0.2);
+}
