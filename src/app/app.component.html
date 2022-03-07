@@ -1,13 +1,35 @@
+<!--p-sidebar [(visible)]="displayModal" position="bottom" [transitionOptions]="'0ms'" [blockScroll]="true" [fullScreen]="true">
+  <div style="max-width: 100vw; height: calc(100vh - 120px);">
+    <img class="banner-img" src="./assets/banner/BannerAutoevaluacion30x30.jpeg">
+  </div>
+  <a class="btn btn-danger btn-encuesta" (click)="openURLEncuesta()">  Ir a encuesta</a>
+</p-sidebar-->
+
+
 <div class="page-title">
-  <a class="icon-link" target="_blank" href="http://instagram.com/uvalpochile">
-    <i-feather name="instagram" class="icon header"></i-feather>
-  </a>
-  <a class="icon-link" target="_blank" href="http://twitter.com/uvalpochile">
-    <i-feather name="youtube" class="icon header"></i-feather>
-  </a>
   <a class="icon-link" target="_blank" href="https://www.facebook.com/uvalpo">
     <i-feather name="facebook" class="icon header"></i-feather>
   </a>
+  <a class="icon-link" target="_blank" href="http://twitter.com/uvalpochile">
+    <i-feather name="twitter" class="icon header"></i-feather>
+  </a>
+  <a class="icon-link" target="_blank" href="http://instagram.com/uvalpochile">
+    <i-feather name="instagram" class="icon header"></i-feather>
+  </a>
+  <a class="icon-link" target="_blank" href="http://youtube.com/uvalpochile">
+    <i-feather name="youtube" class="icon header"></i-feather>
+  </a>
+  <a class="icon-link" target="_blank"
+    href="http://maps.google.com/maps/ms?ie=UTF8&msa=0&msid=110524799200358608398.00047093487b9b047bac7&ll=-32.999882,-71.588116&spn=0.109991,0.154324&z=13">
+    <i-feather name="map-pin" class="icon header"></i-feather>
+  </a>
+</div>
+
+<div id="logouv">
+  <img src="assets/logos/Imagen2.png">
+</div>
+<div id="hashtag">
+  <img src="assets/logos/Imagen1.png">
 </div>
 
 <div class="nav-header">
@@ -17,7 +39,6 @@
 
 
 <inicio *ngIf="!showBoletines && !selectedNoticia && selectedIndex == 0"></inicio>
-
 <noticias *ngIf="!showBoletines && !selectedNoticia && selectedIndex == 0" [banner]="true"
   (onSelectNoticia)="verNoticia($event)"></noticias>
 <div class="bg-gray" *ngIf="!showBoletines && !selectedNoticia && selectedIndex == 0" style="text-align: center;">
@@ -97,7 +118,7 @@
 
 
 
-<div style="background-color: #6E2B13; color: #ffffff; padding: 50px 0px;">
+<div style="background-color: #00429a; color: #ffffff; padding: 50px 0px;">
   <div class="col-sm-12">
     <div class="container" style="text-align: justify;">
       <div class="row">

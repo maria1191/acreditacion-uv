@@ -9,7 +9,7 @@
     border: none;
     background-image: url(/assets/video-background.png);
     background-size: cover;
-    background-color: #6E2B13;
+    background-color: #014299;
     text-align: center;
     overflow: hidden;
 }
@@ -22,8 +22,8 @@
     transform: translate(-50%, 0%);
 }
 .home {
-    height: calc(0.56 * 100vw);
-    height: 70vh;
+    height: calc(0.565 * 100vw);
+    height: 100vh;
     overflow-x: hidden;
 }
 .home .splash {
@@ -34,13 +34,15 @@
 }
 .home .splash .intro {
     max-width: 100%;
+    width: 512px;
+    width: 48rem;
     margin: 0 auto;
     width: 100vw;
     margin-top: -5vh;
 }
 .home .splash .intro .text {
     text-align: center;
-    height: 65vh;
+    height: 67vh;
     color: #ffffff;
 }
 .home .splash .intro .text .title {
@@ -66,7 +68,7 @@ h1,
 }
 .home .splash .gradient {
     position: absolute;
-    top: 154px;
+    top: 235px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -137,10 +139,15 @@ h1,
 }
 
 .indicadores-home {
-    margin-top: -200px;
+    margin-bottom: 90px;
+    margin-top: -400px;
 }
 
 @media (max-width: 991px) {
+    .indicadores-home {
+        margin-bottom: 90px;
+        margin-top: -200px;
+    }
     .home .splash .gradient {
         top: 125px;
     }
@@ -179,5 +186,19 @@ h1,
     }
     #video-background {
         top: 43px;
+    }
+    .indicadores-home {
+        margin-top: -440px;
+    }
+}
+
+@media (max-height: 930px) {
+    .indicadores-home {
+        margin-top: 0vh;
+    }
+}
+@media (max-height: 730px) {
+    .indicadores-home {
+        margin-top: -15vh;
     }
 }

@@ -2,7 +2,7 @@
     background-color: #ffffff;
 }
 .home.header.main-menu {
-    background-color: #6E2B13;
+    background-color: #00429a;
 }
 
 .home-slider {
@@ -14,7 +14,7 @@
     overflow: hidden;
 }
 .home-slider.main-menu {
-    margin: 60px 50px 10px 50px;
+    margin: 150px 50px 10px 50px;
 }
 .home-slider .home-slide-item {
     text-align: center;
